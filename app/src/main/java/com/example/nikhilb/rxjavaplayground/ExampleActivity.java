@@ -56,8 +56,6 @@ public class ExampleActivity extends AppCompatActivity {
                 .subscribe(observer);
 
 
-
-
         // Disposable is used to dispose a subscription when an observer no longer wants to listen
         // to an observable
 

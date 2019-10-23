@@ -63,7 +63,30 @@ public class Example2Activity extends AppCompatActivity {
                 .subscribeWith(new DisposableObserver<String>() {
                     @Override
                     public void onNext( String s ) {
+                        Log.d(TAG,s);
+                    }
 
+                    @Override
+                    public void onError( Throwable e ) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                }));
+
+
+        compositeDisposable.add(Observable.range(1, 20)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .filter(integer -> integer % 2 == 0)
+                .map(integer -> integer + " is even number")
+                .subscribeWith(new DisposableObserver<String>() {
+                    @Override
+                    public void onNext( String s ) {
+                        Log.d(TAG,s);
                     }
 
                     @Override

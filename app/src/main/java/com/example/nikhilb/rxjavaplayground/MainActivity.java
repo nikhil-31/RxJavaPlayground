@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 //                    }
 //                }).subscribe(animalsObserver);
 
-        Intent intent = new Intent(MainActivity.this, Example8Activity.class);
+        Intent intent = new Intent(MainActivity.this, Example10Activity.class);
         startActivity(intent);
 
     }
